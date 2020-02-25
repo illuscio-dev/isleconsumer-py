@@ -1,0 +1,116 @@
+components:
+  parameters: {}
+  responses: {}
+  schemas:
+    Enemy:
+      properties:
+        name:
+          allOf:
+          - {$ref: '#/components/schemas/Name'}
+          description: The Enemy's name
+        rank: {description: Military Rank, type: string}
+      required: [name, rank]
+      type: object
+    EnemyPOST:
+      properties:
+        name:
+          allOf:
+          - {$ref: '#/components/schemas/Name'}
+          description: The Enemy's name
+      required: [name]
+      type: object
+    Error:
+      properties:
+        code: {description: Error code., format: int32, type: integer}
+        data: {default: null, description: Arbitrary data dict with information about
+            the error., nullable: true, type: object}
+        id: {description: UUID for specific instance of raised error for bug fixing.,
+          format: uuid, type: string}
+        message: {description: Description of error., type: string}
+        name: {description: Name of error class., type: string}
+      required: [code, message, name]
+      type: object
+    Name:
+      properties:
+        first: {description: Cannot contain spaces, type: string}
+        last: {description: Cannot Contain spaces, type: string}
+      required: [first, last]
+      type: object
+    Paging:
+      properties:
+        current_page: {description: Current page index (starting at one)., format: int32,
+          type: integer}
+        limit: {description: Limit sent to params of request., format: int32, type: integer}
+        next: {description: Next page url, nullable: true, type: string}
+        offset: {description: Offset sent to params od request., format: int32, type: integer}
+        previous: {description: Previous page url., nullable: true, type: string}
+        total_items: {default: null, description: Total number of returnable items.,
+          format: int32, nullable: true, type: integer}
+        total_pages: {default: null, description: Number of total pages., format: int32,
+          nullable: true, type: integer}
+      required: [current_page, limit, next, offset, previous]
+      type: object
+    Responsestr:
+      properties:
+        data: {default: null, description: Return data from query., nullable: true,
+          type: string}
+        error:
+          allOf:
+          - {$ref: '#/components/schemas/Error'}
+          default: null
+          description: Error information.
+          nullable: true
+        paging:
+          allOf:
+          - {$ref: '#/components/schemas/Paging'}
+          default: null
+          description: Paging information.
+          nullable: true
+      type: object
+  securitySchemes: {}
+info: {title: isleservice, version: 0.0.13}
+openapi: 3.0.0
+paths:
+  /greet:
+    get:
+      description: Get a greeting.
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: {first: Obi-wan, last: Kenobi}
+              rank: General
+            schema: {$ref: '#/components/schemas/Enemy'}
+      responses:
+        200:
+          content:
+            application/json:
+              example: {data: GENERAL KENOBI!, error: null, paging: null}
+              schema: {$ref: '#/components/schemas/Responsestr'}
+          description: OK
+    post:
+      description: Send a greeting to an Enemy
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: {first: Obi-wan, last: Kenobi}
+            schema: {$ref: '#/components/schemas/EnemyPOST'}
+      responses:
+        200:
+          content:
+            application/json:
+              example: {data: KENOBI!, error: null, paging: null}
+              schema: {$ref: '#/components/schemas/Responsestr'}
+          description: OK.
+        400:
+          content:
+            application/json:
+              example:
+                data: null
+                error: {code: 1100, data: null, id: 2890ebfe-9545-4504-aa2a-7d072a26078b,
+                  message: HACK! COUGH! HCCCCKKK!!!, name: CoughError}
+                paging: null
+              schema: {$ref: '#/components/schemas/Responsestr'}
+          description: 'An error occurred. API Error Codes: 1100'
+tags: []
