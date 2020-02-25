@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="fv-az105" name="pytest" skipped="0" tests="1" time="8.499" timestamp="2020-02-25T21:39:03.525885"><testcase classname="zdevelop.tests.test_service.TestConsume" file="zdevelop/tests/test_service.py" line="4" name="test_import_dicom" time="8.097"><system-out>INFO: TEST CLIENT DELETING RABBITMQ QUEUES
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: CONNECTION ESTABLISHED TO RABBITMQ
+INFO: RABBITMQ CHANNEL ESTABLISHED
+INFO: Connection to amqp://guest:******@localhost:57018// closed. Reconnecting after 5 seconds.
+INFO: CONFIGURING LIFECYCLE
+INFO: STARTING UP &apos;isleconsumer&apos;
+INFO: CONNECTION ESTABLISHED TO RABBITMQ
+INFO: RABBITMQ CHANNEL ESTABLISHED
+INFO: RABBITMQ `in_queue` QUEUE DECLARED
+INFO: PERFORMING TASK: do_something_on_start
+INFO: RUNNING &apos;isleconsumer&apos;
+INFO: RABBITMQ `out_queue` QUEUE DECLARED
+INFO: RABBITMQ `out_queue` QUEUE DECLARED
+INFO: SENDING SHUTDOWN SIGNAL
+INFO: SIGNALING SHUTDOWN
+INFO: SHUTDOWN SIGNAL RECEIVED
+INFO: SHUTTING DOWN &apos;isleconsumer&apos;
+INFO: PERFORMING TASK: do_something_on_close
+INFO: CLOSING RABBITMQ CONNECTION
+INFO: STOP REQUEST RECEIVED BY ASYNC WORKER.
+INFO: Task exception was never retrieved
+future: &lt;Task finished name=&apos;Task-74&apos; coro=&lt;consumer() done, defined at /opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/aio_pika/queue.py:25&gt; exception=ConsumerStop(&apos;Consumer stop requested. Exiting worker.&apos;)&gt;
+Traceback (most recent call last):
+  File &quot;/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/aio_pika/queue.py&quot;, line 27, in consumer
+    return await create_task(callback, message, loop=loop)
+  File &quot;/opt/hostedtoolcache/Python/3.8.1/x64/lib/python3.8/site-packages/spanconsumer/_consumer.py&quot;, line 362, in processor_wrapper
+    raise ConsumerStop(&quot;Consumer stop requested. Exiting worker.&quot;)
+spanconsumer._errors.ConsumerStop: Consumer stop requested. Exiting worker.
+INFO: WORKERS DONE
+INFO: Connection to amqp://guest:******@localhost:57018// closed. Reconnecting after 5 seconds.
+INFO: CLEANING UP
+INFO: SHUT DOWN COMPLETE
+INFO: SHUTDOWN COMPLETE
+</system-out></testcase></testsuite></testsuites>
