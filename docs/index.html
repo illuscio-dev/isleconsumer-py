@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IsleConsumer &mdash; isleconsumer 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> isleconsumer
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">IsleConsumer</a></li>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li><a class="reference internal" href="#setting-up-your-service">Setting up your Service</a></li>
+<li><a class="reference internal" href="#writing-your-service">Writing Your Service</a></li>
+<li><a class="reference internal" href="#deploying-your-service">Deploying Your Service</a></li>
+<li><a class="reference internal" href="#dockerfile-template">Dockerfile Template</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">isleconsumer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>IsleConsumer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="isleconsumer">
+<h1>IsleConsumer<a class="headerlink" href="#isleconsumer" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>IsleConsumer is Illuscio’s python consumer microservice template. It builds on top of the
+<a class="reference external" href="https://illuscio-dev-islelib-py.readthedocs-hosted.com/en/latest/">islelib</a> template for python libraries. This documentation will focus on the
+differences between the two templates rather than re-iterating the base features
+inherited from <a class="reference external" href="https://illuscio-dev-islelib-py.readthedocs-hosted.com/en/latest/">islelib</a>.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#basic-usage"><span class="std std-ref">Basic Usage</span></a></p></li>
+<li><p><a class="reference internal" href="#setting-up"><span class="std std-ref">Setting up your Service</span></a></p></li>
+<li><p><a class="reference internal" href="#writing"><span class="std std-ref">Writing Your Service</span></a></p></li>
+<li><p><a class="reference internal" href="#deploying"><span class="std std-ref">Deploying Your Service</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="basic-usage">
+<span id="id1"></span><h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">service</span>
+<span class="go">INFO: STARTING UP &#39;isleconsumer&#39;</span>
+</pre></div>
+</div>
+<p>IsleConsumer comes with a number of pre-built quality-of-life macros for developers so
+they can code more and manage less, most of which are accessed through <code class="docutils literal notranslate"><span class="pre">make</span></code>
+commands.</p>
+</div>
+<div class="section" id="setting-up-your-service">
+<span id="setting-up"></span><h1>Setting up your Service<a class="headerlink" href="#setting-up-your-service" title="Permalink to this headline">¶</a></h1>
+<p>Setting up a service follows the same steps as setting up a library in <code class="docutils literal notranslate"><span class="pre">islelib</span></code>
+with a few small notes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>You service will inherit the name passed to <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">name</span></code>. The main package of your
+service will always be <code class="docutils literal notranslate"><span class="pre">service</span></code> do not change the package name, as some of the
+service framework relies on it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> will pull and spin up a RabbitMQ docker image to test against.
+Although this might violate the idealized philosophy of unittests, because a
+consumer service is so tightly tied with message handling, it is the opinion of
+this library’s author that running tests against an actual instance of the leads to
+greater confidence in the test results, and saves time having to mock RabbitMQ’s
+API.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="writing-your-service">
+<span id="writing"></span><h1>Writing Your Service<a class="headerlink" href="#writing-your-service" title="Permalink to this headline">¶</a></h1>
+<p>Linting, Testing and Basic documentation are all handled identically to <a class="reference external" href="https://illuscio-dev-islelib-py.readthedocs-hosted.com/en/latest/">islelib</a>.</p>
+<p>Services are based off of <a class="reference external" href="https://github.com/illuscio-dev/spanconsumer-py">spanconsumer</a> <code class="docutils literal notranslate"><span class="pre">SpanConsumer</span></code> objects. It is suggested you be
+familiar with it and the libraries it is built to work with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/illuscio-dev/grahamcracker-py">grahamcracker</a></p></li>
+<li><p><a class="reference external" href="https://marshmallow.readthedocs.io/en/3.0/">marshamllow</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/dataclasses.html">dataclasses</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/typing.html">typing</a></p></li>
+<li><p><a class="reference external" href="https://aio-pika.readthedocs.io/en/latest/">aio_pika</a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Isleservice requires python 3.7 or later.</strong></p>
+<p>Set up the processors and startup / shutdown tasks of your service, then your service is
+ready to go!</p>
+</div>
+<div class="section" id="deploying-your-service">
+<span id="deploying"></span><h1>Deploying Your Service<a class="headerlink" href="#deploying-your-service" title="Permalink to this headline">¶</a></h1>
+<p>Service containers are built through <a class="reference external" href="https://azure.microsoft.com/en-us/services/devops/">Azure Devops</a> just as islelib libraries are.
+Azure Pipelines can be configured to use <a class="reference external" href="https://hub.docker.com/">Dockerhub</a> or any dockerhub-compatible API
+(illuscio uses <a class="reference external" href="https://azure.microsoft.com/en-us/services/container-registry/">Azure Container Registry</a>).</p>
+<p>On Azure define the following variables in a library-group, then link the group to your
+service’s pipeline:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>CONTAINER_REGISTRY_ID</strong>: Your dockerhub/registry user ID</p></li>
+<li><p><strong>CONTAINER_REGISTRY_PASSWORD</strong>: Your dockerhub/registry user password</p></li>
+<li><p><strong>CONTAINER_REGISTRY_URL</strong>: Your dockerhub/registry base url</p></li>
+</ul>
+</div></blockquote>
+<p>Azure will automatically build a new image of your service and update your registry with
+it. It will add both tags for the latest version and update the <code class="docutils literal notranslate"><span class="pre">latest</span></code> tag to the
+newest build.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>SECURITY NOTE:</strong> Dockerhub will default to a public repo when pushing a
+new service for the first time. To avoid this, create a private repo <em>before</em>
+executing your first build.</p>
+<p>The default for azure container registry is private, so no action needs to be taken
+before a build.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on the Azure build process this template uses, see the
+<a class="reference external" href="https://github.com/illuscio-dev/azure-pipelines-templates">remote build pipeline templates repo</a>.</p>
+</div>
+</div>
+<div class="section" id="dockerfile-template">
+<h1>Dockerfile Template<a class="headerlink" href="#dockerfile-template" title="Permalink to this headline">¶</a></h1>
+<p>The dockerfile included in this template uses a multi-stage build process, allowing
+users to pass the following environmental variables in for the build:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>PIP_INDEX_URL</strong>: First pypi index to use during pip install.</p></li>
+<li><p><strong>PIP_EXTRA_INDEX_URL</strong>: Second pypi index to use during pip install.</p></li>
+</ul>
+</div></blockquote>
+<p>Because one or both of these variables may contain login information for private
+indexes, they are used in the build container, which is then discarded. Services
+are installed into a virtual environment, which is then copied to the output
+container for the actual service to build.</p>
+<p>The base image used for services in <code class="docutils literal notranslate"><span class="pre">python:3.8-slim</span></code>, into which the required
+dependencies for building wheels are added. After build, the entire virtual environment
+is copied into our service container, and used to run the service.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright &#39;2018, Illuscio&#39;
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

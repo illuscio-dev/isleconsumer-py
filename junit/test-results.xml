@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="fv-az191" name="pytest" skipped="0" tests="1" time="3.542" timestamp="2020-02-25T21:34:55.234818"><testcase classname="zdevelop.tests.test_service.TestConsume" file="zdevelop/tests/test_service.py" line="4" name="test_import_dicom" time="3.098"><system-out>INFO: TEST CLIENT DELETING RABBITMQ QUEUES
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: RABBITMQ CONNECTION FAILED. RETRYING IN 1S
+INFO: CONNECTION ESTABLISHED TO RABBITMQ
+INFO: RABBITMQ CHANNEL ESTABLISHED
+INFO: Connection to amqp://guest:******@localhost:57018// closed. Reconnecting after 5 seconds.
+INFO: CONFIGURING LIFECYCLE
+INFO: STARTING UP &apos;isleconsumer&apos;
+INFO: CONNECTION ESTABLISHED TO RABBITMQ
+INFO: RABBITMQ CHANNEL ESTABLISHED
+INFO: RABBITMQ `in_queue` QUEUE DECLARED
+INFO: PERFORMING TASK: do_something_on_start
+INFO: RUNNING &apos;isleconsumer&apos;
+INFO: RABBITMQ `out_queue` QUEUE DECLARED
+INFO: RABBITMQ `out_queue` QUEUE DECLARED
+INFO: SENDING SHUTDOWN SIGNAL
+INFO: SIGNALING SHUTDOWN
+INFO: WORKERS DONE
+INFO: SHUTDOWN SIGNAL RECEIVED
+INFO: SHUTTING DOWN &apos;isleconsumer&apos;
+INFO: PERFORMING TASK: do_something_on_close
+INFO: CLOSING RABBITMQ CONNECTION
+INFO: Connection to amqp://guest:******@localhost:57018// closed. Reconnecting after 5 seconds.
+INFO: CLEANING UP
+INFO: SHUT DOWN COMPLETE
+INFO: SHUTDOWN COMPLETE
+</system-out></testcase></testsuite></testsuites>
